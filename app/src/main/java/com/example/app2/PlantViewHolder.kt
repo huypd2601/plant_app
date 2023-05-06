@@ -37,9 +37,5 @@ class PlantViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
             .into(plantImage)
 
         itemView.setOnClickListener { callback.onClickItem(plant) }
-        itemView.setOnLongClickListener {
-            callback.onLongClick(plant)
-            true
-        }
     }
 }
