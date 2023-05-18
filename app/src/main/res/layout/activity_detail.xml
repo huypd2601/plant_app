@@ -6,65 +6,84 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".PlantVM">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:id="@+id/plant_image"
+                android:layout_marginTop="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/xuongrong"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/plant_name"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/plant_name"
-        android:layout_marginTop="24dp"
-        android:text="Camera"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:layout_marginStart="16dp"
-        android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                android:id="@+id/heart_detail"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/heart_detail" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:id="@+id/plant_image"
-        android:layout_marginTop="20dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/xuongrong"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/plant_name"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/plant_name"
+                android:layout_marginTop="24dp"
+                android:text="Circle Cactus"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:layout_marginStart="16dp"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/plant_desc"
-        android:layout_marginTop="20dp"
-        android:text="@string/camera"
-        android:textColor="@color/black"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:padding="12dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/plant_image"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/baseline_star_24"
+                />
 
-    <TextView
-        android:id="@+id/plant_kingdom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kingdom"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/plant_desc"/>
+            <TextView
+                android:id="@+id/plant_kingdom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kingdom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/plant_desc"/>
 
-    <TextView
-        android:id="@+id/plant_family"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Family"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/plant_kingdom"/>
+            <TextView
+                android:id="@+id/plant_family"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Family"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/plant_kingdom"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/plant_desc"
+                android:layout_marginTop="20dp"
+                android:text="@string/camera"
+                android:textColor="@color/black"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                android:padding="12dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/plant_image"/>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
