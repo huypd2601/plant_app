@@ -22,12 +22,11 @@
 
                 <ImageView
                     android:id="@+id/iv_backgroundProfile"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/background_profile_02"
+                    android:src="@drawable/profile_rectangle"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,13 +59,11 @@
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/iv_avatarProfile"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="50dp"
-                        android:src="@drawable/ava_profile"
-                        app:civ_border_color="@color/white"
-                        app:civ_border_width="7dp" />
+                        android:layout_marginTop="60dp"
+                        android:src="@drawable/ava_profile" />
 
                     <TextView
                         android:id="@+id/tv_nameUser"
@@ -77,7 +74,7 @@
                         android:layout_marginTop="5dp"
                         android:text="Pham Vu Hop"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
+                        android:textSize="22sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -86,13 +83,29 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_nameUser"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="10dp"
                         android:drawableLeft="@drawable/baseline_location_24"
                         android:drawableTint="@color/white"
                         android:text="District 2, Ho Chi Minh City"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="18sp" />
+
                 </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/profile_ellipse"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/profile_ellipse_02"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="MissingConstraints" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -123,8 +136,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:backgroundTint="@color/dark_green"
-                        android:text="Article"
+                        android:backgroundTint= "@color/white"
+                        android:text="Articles"
+                        android:textColor="@color/gray_profile"
                         android:textAllCaps="false"
                         tools:ignore="MissingConstraints"></Button>
 
@@ -134,7 +148,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
                         android:layout_marginTop="20dp"
-                        android:backgroundTint="@color/light_green"
+                        android:backgroundTint="@color/blue_btn"
                         android:text="Species"
                         android:textAllCaps="false"
                         tools:ignore="MissingConstraints"></Button>
@@ -145,8 +159,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:text="Your Plant:"
-                    android:textSize="20sp"
+                    android:text="Your Collected Plants:"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/imageView4"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout"

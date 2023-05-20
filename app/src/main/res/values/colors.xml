@@ -34,4 +34,7 @@
     <color name="colorTrendingEnd">#96C93D</color>
     <color name="colorDriver">#D6D6D6</color>
 
+    <color name="blue_btn">#48A2F5</color>
+    <color name="gray_profile">#C5C5C5</color>
+
 </resources>
