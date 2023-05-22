@@ -37,4 +37,9 @@
     <color name="blue_btn">#48A2F5</color>
     <color name="gray_profile">#C5C5C5</color>
 
+    <color name="text_signup">#36455A</color>
+    <color name="text_down_signup">#505B69</color>
+    <color name="btn_signup">#2DDA93</color>
+    <color name="detailText_signup">#B0B2B8</color>
+
 </resources>
