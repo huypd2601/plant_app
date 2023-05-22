@@ -71,7 +71,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/iv_avatarProfile"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="10dp"
                         android:text="Pham Vu Hop"
                         android:textColor="@color/white"
                         android:textSize="22sp"
@@ -114,8 +114,8 @@
 
                 <ImageView
                     android:id="@+id/imageView4"
-                    android:layout_width="300dp"
-                    android:layout_height="300dp"
+                    android:layout_width="320dp"
+                    android:layout_height="320dp"
                     android:src="@drawable/img_plant_example"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -133,25 +133,31 @@
 
                     <Button
                         android:id="@+id/btn_unknown"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="115dp"
+                        android:layout_height="42dp"
                         android:layout_marginTop="20dp"
-                        android:backgroundTint= "@color/white"
-                        android:text="Articles"
-                        android:textColor="@color/gray_profile"
+                        android:background="@drawable/profile_btn"
+                        android:backgroundTint="@color/white"
+                        android:text="ARTICLES"
                         android:textAllCaps="false"
-                        tools:ignore="MissingConstraints"></Button>
+                        android:textColor="@color/gray_profile"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        tools:ignore="MissingConstraints,TextSizeCheck"></Button>
 
                     <Button
                         android:id="@+id/btn_unknown2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="115dp"
+                        android:layout_height="42dp"
                         android:layout_marginLeft="50dp"
                         android:layout_marginTop="20dp"
-                        android:backgroundTint="@color/blue_btn"
-                        android:text="Species"
+                        android:background="@drawable/profile_btn"
+                        android:text="SPECIES"
                         android:textAllCaps="false"
-                        tools:ignore="MissingConstraints"></Button>
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        tools:ignore="MissingConstraints,TextSizeCheck" />
                 </LinearLayout>
 
                 <TextView
