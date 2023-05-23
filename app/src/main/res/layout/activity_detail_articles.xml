@@ -43,9 +43,9 @@
                     android:layout_marginStart="20dp"
                     android:text="VEGETABLES"
                     android:padding="8dp"
-                    android:background="@drawable/custom_edittext"
+                    android:background="#1A2F91EB"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
+                    android:textColor="#2F91EB"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -53,17 +53,23 @@
                 <TextView
                     android:id="@+id/type_plant2"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="50dp"
                     android:textStyle="bold"
                     android:text="GARDEN"
                     android:padding="8dp"
-                    android:background="@drawable/custom_edittext"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
+                    android:textColor="#2F91EB"
+                    android:background="#1A2F91EB"
+
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/tym"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/tym"
+                    android:layout_marginStart="50dp"/>
 
             </LinearLayout>
 
@@ -82,10 +88,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
+            <RatingBar
+                android:id="@+id/rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                app:layout_constraintStart_toStartOf="@+id/plant_title"
+                app:layout_constraintTop_toBottomOf="@+id/plant_title" />
+
+
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/plant_title">
+                app:layout_constraintTop_toBottomOf="@+id/rating_bar">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/plant_ava"
@@ -140,13 +156,13 @@
                     android:layout_height="33dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="32dp"
-                    android:background="@drawable/follow"
+                    android:backgroundTint="#2DDA93"
                     android:text="+ Follow"
                     android:textSize="10sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/linearLayout4"
-                    app:layout_constraintTop_toTopOf="parent" />
-
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TouchTargetSizeCheck" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -163,7 +179,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Public parks aside, getting a dose of nature can be a tricky task during an urban escape. But nat ure should and can fit into that city getaway, acc ording to Kally Ellis, the founder of the London fl orist company McQueens and the in-house florist for the Maybourne Hotel Group. “Connecting with the natural world wherever you are is a great antid ote to jet lag and travel tiredness,” she said. “Plan ts and flowers can refresh us, boost our energy and help us recalibrate.”"
-                android:textColor="@color/black"
+                android:textColor="#CC202020"
+
                 android:textSize="18sp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="20dp"
