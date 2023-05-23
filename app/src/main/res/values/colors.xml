@@ -17,7 +17,7 @@
     <color name="dark_green_02">#053549</color>
     <color name="light_green">#007f94</color>
 
-    <color name="green_noise">#75b975</color>
+    <color name="green_noise">#2DDA93</color>
     
     
     <color name="bottom_nav_backgr">#FEDBD0</color>
@@ -33,5 +33,13 @@
     <color name="colorTrendingStart">#00B09B</color>
     <color name="colorTrendingEnd">#96C93D</color>
     <color name="colorDriver">#D6D6D6</color>
+
+    <color name="blue_btn">#48A2F5</color>
+    <color name="gray_profile">#C5C5C5</color>
+
+    <color name="text_signup">#36455A</color>
+    <color name="text_down_signup">#505B69</color>
+    <color name="btn_signup">#2DDA93</color>
+    <color name="detailText_signup">#B0B2B8</color>
 
 </resources>
