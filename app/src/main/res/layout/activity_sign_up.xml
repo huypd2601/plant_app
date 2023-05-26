@@ -40,6 +40,7 @@
                     android:id="@+id/email"
                     android:layout_marginTop="28dp"
                     android:hint="Email"
+                    android:textSize="15dp"
                     android:textStyle="bold|normal"
                     android:textColorHint="@color/detailText_signup"
                     android:inputType="textEmailAddress"/>
@@ -50,12 +51,11 @@
                     android:layout_marginTop="18dp"
                     app:boxBackgroundMode="none"
                     app:passwordToggleEnabled="true"
-                    app:passwordToggleTint="@color/dark_green"
                     android:id="@+id/password"
                     android:hint="Password"
+                    android:textSize="15dp"
                     android:textStyle="bold"
                     android:inputType="textPassword"
-                    android:textSize="18sp"
                     android:textColorHint="@color/detailText_signup"/>
 
                 <EditText
@@ -63,6 +63,7 @@
                     android:layout_height="50dp"
                     android:id="@+id/username"
                     android:hint="FullName"
+                    android:textSize="15dp"
                     android:textStyle="bold"
                     android:textColorHint="@color/detailText_signup"
                     android:layout_marginTop="18dp"/>
@@ -71,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:id="@+id/SignUpButton"
-                    android:text="Sign Up"
+                    android:text="SIGN UP"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:layout_marginTop="80dp"
