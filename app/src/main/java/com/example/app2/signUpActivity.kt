@@ -25,14 +25,9 @@ class signUpActivity : AppCompatActivity() {
             val user = binding.username.text.trim().toString()
             val email = binding.email.text.trim().toString()
             val pass = binding.password.text?.trim().toString()
-            val repass = binding.ConfirmPassword.text?.trim().toString()
-            val check = binding.ReadTermText.isChecked
+            val repass = binding.confirmpassword.text?.trim().toString()
 
-            viewModel.checkEmailAndPassword(user,email, pass, repass,check)
-        }
-        binding.DescriptionSignInText.setOnClickListener {
-            val intent = Intent(this, logInActivity::class.java)
-            startActivity(intent)
+            viewModel.checkEmailAndPassword(user,email, pass, repass)
         }
         listenerSuccessEvent()
         listenerErrorEvent()

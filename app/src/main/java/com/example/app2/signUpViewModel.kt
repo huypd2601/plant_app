@@ -22,7 +22,7 @@ class signUpViewModel : ViewModel() {
     val isErrorEvent: LiveData<String>
         get() = _isErrorEvent
 
-    fun checkEmailAndPassword(user:String, email: String, password: String, repassword: String, check: Boolean) {
+    fun checkEmailAndPassword(user:String, email: String, password: String, repassword: String) {
         //kiem tra format email
 
         if (user.isEmpty() || email.isEmpty() || password.isEmpty() || repassword.isEmpty()){
@@ -48,10 +48,6 @@ class signUpViewModel : ViewModel() {
             return
         }
         //check read term
-        if (!check){
-            _isErrorEvent.postValue("Vui lòng .....")
-            return
-        }
 
         //call API login
         //val isSuccess = DataRepo.login(email = email, pass = password)

@@ -33,7 +33,7 @@
             android:name=".PlantVM"
             android:exported="false" />
         <activity
-            android:name=".logInActivity"
+            android:name=".ListPlant"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -48,7 +48,7 @@
             android:name=".forgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".ListPlant"
+            android:name=".logInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

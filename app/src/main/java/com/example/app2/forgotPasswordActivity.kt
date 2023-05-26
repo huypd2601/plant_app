@@ -31,9 +31,5 @@ class forgotPasswordActivity : AppCompatActivity() {
                             Toast.LENGTH_SHORT
                         ).show()                    }                    }
         }
-        binding.DescriptionSignInText.setOnClickListener {
-            val intent = Intent(this, logInActivity::class.java)
-            startActivity(intent)
-        }
     }
 }
