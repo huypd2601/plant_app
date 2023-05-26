@@ -52,6 +52,7 @@ class signUpActivity : AppCompatActivity() {
                                 }
                                 val intent = Intent(this, logInActivity::class.java)
                                 startActivity(intent)
+                                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
                             }
                         }
                     }

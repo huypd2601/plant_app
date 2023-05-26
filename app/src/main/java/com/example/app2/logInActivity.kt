@@ -15,9 +15,16 @@ class logInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_log_in)
         firebaseAuth = FirebaseAuth.getInstance()
+        val user = firebaseAuth.currentUser
+        if (user != null) {
+            if (user.isEmailVerified) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+            }
+        }
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_log_in)
         binding.loginButton.setOnClickListener {
             val email = binding.email.text.trim().toString()
             val pass = binding.password.text?.trim().toString()
@@ -47,21 +54,12 @@ class logInActivity : AppCompatActivity() {
         binding.signupButton.setOnClickListener {
             val intent = Intent(this, signUpActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
         }
         binding.forgotPasswordText.setOnClickListener {
             val intent = Intent(this, forgotPasswordActivity::class.java)
             startActivity(intent)
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        val user = firebaseAuth.currentUser
-        if (user != null) {
-            if (user.isEmailVerified) {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            }
+            overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
         }
     }
 }

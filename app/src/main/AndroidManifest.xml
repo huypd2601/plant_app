@@ -18,7 +18,7 @@
             android:name=".IntroductionPage2"
             android:exported="false" />
         <activity
-            android:name=".IntroductionPage1"
+            android:name=".logInActivity"
             android:exported="false" />
         <activity
             android:name=".DetailArticlesActivity"
@@ -48,7 +48,7 @@
             android:name=".forgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".logInActivity"
+            android:name=".IntroductionPage1"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
