@@ -13,23 +13,27 @@ class forgotPasswordActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_forgot_password)
-        firebaseAuth = FirebaseAuth.getInstance()
-        binding.ForgotPassButton.setOnClickListener {
-            firebaseAuth.sendPasswordResetEmail(binding.email.text.trim().toString())
-                .addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        Toast.makeText(
-                            this,
-                            "Kiểm tra Email để thực hiện đặt lại mât khẩu!",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }else{
-                        Toast.makeText(
-                            this,
-                            "Lỗi khi thực hiện gửi Mail!",
-                            Toast.LENGTH_SHORT
-                        ).show()                    }                    }
-        }
+//        binding = DataBindingUtil.setContentView(this, R.layout.activity_forgot_password)
+//        firebaseAuth = FirebaseAuth.getInstance()
+//        binding.ForgotPassButton.setOnClickListener {
+//            firebaseAuth.sendPasswordResetEmail(binding.email.text.trim().toString())
+//                .addOnCompleteListener {
+//                    if (it.isSuccessful) {
+//                        Toast.makeText(
+//                            this,
+//                            "Kiểm tra Email để thực hiện đặt lại mât khẩu!",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                    }else{
+//                        Toast.makeText(
+//                            this,
+//                            "Lỗi khi thực hiện gửi Mail!",
+//                            Toast.LENGTH_SHORT
+//                        ).show()                    }                    }
+//        }
+//        binding.DescriptionSignInText.setOnClickListener {
+//            val intent = Intent(this, logInActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 }
