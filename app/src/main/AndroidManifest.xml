@@ -12,6 +12,10 @@
         android:theme="@style/Theme.App2"
         tools:targetApi="31">
         <activity
+
+            android:name=".SpeciesActivity"
+            android:exported="false" />
+        <activity
             android:name=".IntroductionPage3"
             android:exported="false" />
         <activity
@@ -37,6 +41,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+
             android:exported="false" />
         <activity
             android:name=".introActivity"
@@ -48,6 +53,7 @@
             android:name=".forgotPasswordActivity"
             android:exported="false" />
         <activity
+
             android:name=".ListPlant"
             android:exported="true">
             <intent-filter>

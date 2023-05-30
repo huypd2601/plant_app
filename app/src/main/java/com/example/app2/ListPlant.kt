@@ -67,7 +67,6 @@ class ListPlant : AppCompatActivity() {
         viewModel.listOfPlants.observe(this, Observer{ data ->
             run{
                 adapter.submitList(data)
-
             }
         })
     }

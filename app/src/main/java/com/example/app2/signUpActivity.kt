@@ -18,24 +18,24 @@ class signUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
-        viewModel = ViewModelProvider(this).get(signUpViewModel::class.java)
-
-        binding.SignUpButton.setOnClickListener {
-            val user = binding.username.text.trim().toString()
-            val email = binding.email.text.trim().toString()
-            val pass = binding.password.text?.trim().toString()
-            val repass = binding.ConfirmPassword.text?.trim().toString()
-            val check = binding.ReadTermText.isChecked
-
-            viewModel.checkEmailAndPassword(user,email, pass, repass,check)
-        }
-        binding.DescriptionSignInText.setOnClickListener {
-            val intent = Intent(this, logInActivity::class.java)
-            startActivity(intent)
-        }
-        listenerSuccessEvent()
-        listenerErrorEvent()
+//        binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
+//        viewModel = ViewModelProvider(this).get(signUpViewModel::class.java)
+//
+//        binding.SignUpButton.setOnClickListener {
+//            val user = binding.username.text.trim().toString()
+//            val email = binding.email.text.trim().toString()
+//            val pass = binding.password.text?.trim().toString()
+//            val repass = binding.ConfirmPassword.text?.trim().toString()
+//            val check = binding.ReadTermText.isChecked
+//
+//            viewModel.checkEmailAndPassword(user,email, pass, repass,check)
+//        }
+//        binding.DescriptionSignInText.setOnClickListener {
+//            val intent = Intent(this, logInActivity::class.java)
+//            startActivity(intent)
+//        }
+//        listenerSuccessEvent()
+//        listenerErrorEvent()
 
 
     }
