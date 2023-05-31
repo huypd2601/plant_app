@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_gravity="center_horizontal"
-    android:padding="24dp"
-    android:background="@drawable/bgintro1"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <Button
-        android:id="@+id/nextIntroButton1"
-        android:layout_width="336dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginTop="651dp"
-        android:layout_marginEnd="113dp"
-        android:backgroundTint="@color/green_noise"
-        android:text="Next"
-        android:textSize="18sp"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+    <data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:padding="24dp"
+        android:background="@drawable/bgintro1"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/nextIntroButton1"
+            android:layout_width="336dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="651dp"
+            android:layout_marginEnd="113dp"
+            android:backgroundTint="@color/green_noise"
+            android:text="Next"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
 
