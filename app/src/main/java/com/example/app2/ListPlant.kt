@@ -54,7 +54,10 @@ class ListPlant : AppCompatActivity() {
 
         adapter = PlantAdapter(OnPlantClickListener)
         binding.plantListRecycleView.adapter = adapter
-        viewModel.loadData()
+        val species: Species? = intent.getParcelableExtra("species")
+        println(species)
+        binding.textSpecies.text    =   species?.name
+        viewModel.loadData(species)
     }
 
     private val OnPlantClickListener  = object : OnPlantItemListener {

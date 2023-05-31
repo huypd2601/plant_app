@@ -28,7 +28,7 @@ class PlantVM : ViewModel() {
     val isLoading: LiveData<Boolean>
         get() = _isLoading
 
-    fun loadData() {
+    fun loadData(species: Species?) {
         _isLoading.postValue(true)
 
         viewModelScope.launch {
@@ -37,7 +37,7 @@ class PlantVM : ViewModel() {
             dataSet.clear()
             // firebase
             val db = Firebase.firestore
-            val db1 = Firebase.firestore
+//            val db1 = Firebase.firestore
 //            db.collection("species")
 //                .get()
 //                .addOnSuccessListener { result ->
@@ -56,32 +56,48 @@ class PlantVM : ViewModel() {
 //                    Log.d(TAG, "Error getting documents: ", exception)
 //                }
 
+//            db.collection("species")
+//                .get()
+//                .addOnSuccessListener { result ->
+//                    for (document in result) {
+//                        val species : String = document.id;
+//                        db1.collection("species")
+//                            .document("$species")
+//                            .collection("$species")
+//                            .get()
+//                            .addOnSuccessListener  { result1 ->
+//                                for (document1 in result1){
+//                                    Log.d(TAG1, "${document1.id} => ${document1.data}")
+//                                    val plant : Plant = document1.toObject(Plant::class.java)
+//                                    println(plant)
+//                                    dataSet.add(plant)
+//                                }
+//                            }
+//                            .addOnFailureListener { exception ->
+//                                Log.d(TAG1, "Error getting documents: ", exception)
+//                            }
+//
+//                    }
+//                }
+//                .addOnFailureListener { exception ->
+//                    Log.d(TAG, "Error getting documents: ", exception)
+//                }
+
             db.collection("species")
+                .document("${species?.name}")
+                .collection("${species?.name}")
                 .get()
                 .addOnSuccessListener { result ->
                     for (document in result) {
-                        val species : String = document.id;
-                        db1.collection("species")
-                            .document("$species")
-                            .collection("$species")
-                            .get()
-                            .addOnSuccessListener  { result1 ->
-                                for (document1 in result1){
-                                    Log.d(TAG1, "${document1.id} => ${document1.data}")
-                                    val plant : Plant = document1.toObject(Plant::class.java)
-                                    println(plant)
-                                    dataSet.add(plant)
-                                }
-                            }
-                            .addOnFailureListener { exception ->
-                                Log.d(TAG1, "Error getting documents: ", exception)
-                            }
-
+                        val plant : Plant = document.toObject(Plant::class.java)
+                        println(plant)
+                        dataSet.add(plant)
                     }
                 }
                 .addOnFailureListener { exception ->
-                    Log.d(TAG, "Error getting documents: ", exception)
+                    Log.d(TAG1, "Error getting documents: ", exception)
                 }
+
 
             delay(3000)
             println("debug")

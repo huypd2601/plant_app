@@ -12,8 +12,7 @@
         android:theme="@style/Theme.App2"
         tools:targetApi="31">
         <activity
-
-            android:name=".SpeciesActivity"
+            android:name=".ListPlant"
             android:exported="false" />
         <activity
             android:name=".IntroductionPage3"
@@ -54,7 +53,7 @@
             android:exported="false" />
         <activity
 
-            android:name=".ListPlant"
+            android:name=".SpeciesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
