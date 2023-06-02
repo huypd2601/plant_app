@@ -131,9 +131,10 @@
                     android:layout_marginBottom="8dp"
                     android:paddingStart="10dp"
                     android:text="4.1"
+                    android:textColor="#CC202020"
                     android:textSize="13dp"
                     android:textStyle="bold"
-                    android:textColor="#CC202020"
+                    tools:ignore="TextSizeCheck" />
             </LinearLayout>
 
             <LinearLayout
