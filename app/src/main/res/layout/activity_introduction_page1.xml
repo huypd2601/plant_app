@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:padding="24dp"
-        android:background="@drawable/bgintro1"
+        android:gravity="center"
+        android:orientation="vertical"
         tools:context=".MainActivity">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgintro1"
+            android:padding="24dp"
+            tools:ignore="MissingConstraints" />
         <Button
             android:id="@+id/nextIntroButton1"
             android:layout_width="336dp"
@@ -26,6 +26,7 @@
             android:layout_marginEnd="113dp"
             android:backgroundTint="@color/green_noise"
             android:text="Next"
+            android:layout_marginBottom="50dp"
             android:textSize="18sp"
             app:cornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
