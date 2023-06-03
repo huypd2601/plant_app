@@ -3,10 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,18 +10,19 @@
         android:gravity="center"
         android:layout_gravity="center_horizontal"
         android:padding="24dp"
-        android:background="@drawable/bgintro1"
+        android:background="@drawable/intro_bg_01"
         tools:context=".MainActivity">
 
         <Button
-            android:id="@+id/nextIntroButton1"
+            android:id="@+id/nextIntroButton2"
             android:layout_width="336dp"
-            android:layout_height="53dp"
+            android:layout_height="65dp"
             android:layout_marginStart="117dp"
             android:layout_marginTop="651dp"
             android:layout_marginEnd="113dp"
             android:backgroundTint="@color/green_noise"
             android:text="Next"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:cornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"

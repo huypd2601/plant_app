@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto">
-
-    <data>
-
-    </data>
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,100 +10,121 @@
         android:gravity="center"
         tools:context=".MainActivity">
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="20dp"
-            android:background="@drawable/loginui">
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello"
+                android:id="@+id/ForgotPassText"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_signup" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Let’s Learn More About Plants"
+                android:id="@+id/textSignUp"
+                android:textSize="18sp"
+                android:textColor="@color/text_down_signup"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/email"
+                android:layout_marginTop="28dp"
+                android:hint=" Email"
+                android:textSize="15dp"
+                android:textStyle="bold|normal"
+                android:textColorHint="@color/detailText_signup"
+                android:inputType="textEmailAddress"
+                tools:ignore="Autofill" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="28dp"
+                app:boxBackgroundMode="filled"
+                app:passwordToggleEnabled="true"
+                android:textColorHint="@color/detailText_signup"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="8dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold|normal"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center_horizontal"
-                android:padding="24dp">
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/rememberMe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#6A6F7D"
+                    tools:ignore="TouchTargetSizeCheck"/>
 
                 <TextView
-                    android:id="@+id/loginText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Login"
-                    android:textAlignment="center"
-                    android:textColor="@color/green_noise"
-                    android:textSize="36sp"
-                    android:textStyle="bold" />
+                    android:text="Remember me"
+                    android:textColor="#6A6F7D"/>
 
-                <EditText
-                    android:id="@+id/email"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="40dp"
-                    android:background="@drawable/loginui"
-                    android:drawableLeft="@drawable/ic_person_username"
-                    android:drawablePadding="8dp"
-                    android:hint="Email"
-                    android:padding="8dp"
-                    android:textColor="@color/green_noise"
-                    android:textColorHighlight="@color/cardview_dark_background" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/loginui"
-                    android:drawableTint="@color/green_noise"
-                    app:boxBackgroundMode="none"
-                    app:passwordToggleEnabled="true">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/password"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
-                        android:drawableStart="@drawable/baseline_lock_24"
-                        android:hint="  Password"
-                        android:inputType="textPassword"
-                        android:paddingStart="8dp"
-                        android:paddingTop="0dp"
-                        android:textSize="18sp"
-                        android:textColor="@color/green_noise"
-                        android:textColorHighlight="@color/cardview_dark_background"
-                        />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:id="@+id/loginButton"
-                    android:text="Login"
-                    android:textSize="18sp"
-                    android:layout_marginTop="30dp"
-                    android:backgroundTint="@color/green_noise"
-                    app:cornerRadius="20dp" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:id="@+id/signupButton"
-                    android:text="Sign Up"
-                    android:textSize="18sp"
-                    android:layout_marginTop="3dp"
-                    android:backgroundTint="@color/green_noise"
-                    app:cornerRadius="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forgot Password?"
+                    android:paddingStart="124dp"
+                    android:textColor="#6A6F7D"
+                    android:textStyle="bold"/>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
-        <TextView
+        <Button
+            android:layout_width="365dp"
+            android:layout_height="70dp"
+            android:id="@+id/SignUpButton"
+            android:text="LOGIN"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/btn_signup"/>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="Forgot Password"
-            android:textSize="14sp"
-            android:textAlignment="center"
-            android:id="@+id/forgotPasswordText"
-            android:textColor="@color/green_noise"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don’t Have Account?"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:text="Sign Up"
+                android:textStyle="bold"
+                android:textColor="#2DDA93"/>
+        </LinearLayout>
     </LinearLayout>
 </layout>
