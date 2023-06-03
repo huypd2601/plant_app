@@ -72,7 +72,7 @@
                         android:layout_below="@+id/iv_avatarProfile"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="Pham Vu Hop"
+                        android:text="John Cena"
                         android:textColor="@color/white"
                         android:textSize="22sp"
                         android:textStyle="bold" />
@@ -86,7 +86,7 @@
                         android:layout_marginTop="10dp"
                         android:drawableLeft="@drawable/baseline_location_24"
                         android:drawableTint="@color/white"
-                        android:text="District 2, Ho Chi Minh City"
+                        android:text="District 1, Ho Chi Minh City"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
 
