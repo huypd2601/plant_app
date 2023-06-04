@@ -22,7 +22,6 @@ class signUpActivity : AppCompatActivity() {
     private lateinit var viewModel: signUpViewModel
     private lateinit var database: DatabaseReference
     private lateinit var firestore: FirebaseFirestore
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -62,7 +61,6 @@ class signUpActivity : AppCompatActivity() {
                                         data["UserName"] = name
                                         firestore.collection("profile").document("profile")
                                             .collection("profile").document(firebaseAuth.uid.toString()).set(data)
-
                                         Toast.makeText(this, "Đăng ký thành công, vui lòng kiểm tra email để xác thực tài khoản!", Toast.LENGTH_SHORT).show()
                                     }
                                 }
