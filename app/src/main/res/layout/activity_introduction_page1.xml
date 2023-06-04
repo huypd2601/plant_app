@@ -14,7 +14,7 @@
         tools:context=".MainActivity">
 
         <Button
-            android:id="@+id/nextIntroButton2"
+            android:id="@+id/nextIntroButton1"
             android:layout_width="336dp"
             android:layout_height="65dp"
             android:layout_marginStart="117dp"
