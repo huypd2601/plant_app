@@ -1,14 +1,18 @@
 package com.example.app2
 
 
-import android.content.Context
-import android.content.Intent
+import android.os.Bundle
 import android.util.Log
-import androidx.core.content.ContextCompat.startActivity
+import android.view.View
+import androidx.core.os.bundleOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavDirections
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
+import com.example.app2.databinding.FragmentSpeciesBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.delay
@@ -72,10 +76,17 @@ class SpeciesVM : ViewModel() {
             _listOfSpecies.value = dataSet
     }
 
-    fun handleItemWhenClicked(context: Context ,item: Species) {
-        val intent = Intent(context, ListPlant::class.java)
-        intent.putExtra("species", item)
-        context.startActivity(intent)
+    fun handleItemWhenClicked(view: View ,item: Species) {
+//        val intent = Intent(context, ListPlant::class.java)
+//        intent.putExtra("species", item)
+//        context.startActivity(intent)
+//        val bundle = Bundle()
+//        bundle.putString("species", item.name)
+//        val controller = view.findNavController().navigate(R.id.action_speciesFragment_to_fragmentListPlant,bundle)
+//        val bundle1 = bundleOf("amount" to item)
+        val action = SpeciesFragmentDirections.actionSpeciesFragmentToFragmentListPlant(item)
+        view.findNavController().navigate(action)
+
     }
 
 

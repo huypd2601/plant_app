@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 interface OnPlantItemListener {
-    fun onClickItem(item: Plant)
+    fun onClickItem(item: Plant,view: View)
 }
 
 

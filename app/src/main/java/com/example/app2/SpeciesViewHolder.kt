@@ -23,6 +23,6 @@ class SpeciesViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
     fun bindData(species: Species, callback: OnSpeciesItemListener) {
         val speciesName = itemView.findViewById<TextView>(R.id.species_name);
         speciesName.text = species.name
-        itemView.setOnClickListener { callback.onClickItem(species) }
+        itemView.setOnClickListener { callback.onClickItem(species, itemView) }
     }
 }

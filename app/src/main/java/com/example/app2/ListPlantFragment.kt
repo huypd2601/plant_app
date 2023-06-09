@@ -12,9 +12,11 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.app2.databinding.ActivityListPlantBinding
 import com.example.app2.databinding.FragmentListPlantBinding
+import com.example.app2.databinding.FragmentSpeciesBinding
 import java.util.*
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,9 +29,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ListPlantFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     private lateinit var binding: FragmentListPlantBinding
     private lateinit var adapter: PlantAdapter
@@ -37,7 +36,16 @@ class ListPlantFragment : Fragment() {
     private lateinit var searchView: SearchView
     private lateinit var searchList: List<Plant>
     private lateinit var dataList: List<Plant>
+    val args by navArgs <ListPlantFragmentArgs>()
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        binding = FragmentListPlantBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -70,15 +78,16 @@ class ListPlantFragment : Fragment() {
 
         adapter = PlantAdapter(OnPlantClickListener)
         binding.plantListRecycleView.adapter = adapter
-        val species: Species? = requireActivity().intent.getParcelableExtra("species")
-        println(species)
+
+        val species : Species? = args.species
         binding.textSpecies.text = species?.name
         viewModel.loadData(species)
+
     }
 
     private val OnPlantClickListener = object : OnPlantItemListener {
-        override fun onClickItem(item: Plant) {
-            viewModel.handleItemWhenClicked(requireContext(), item)
+        override fun onClickItem(item: Plant, view: View) {
+            viewModel.handleItemWhenClicked(view, item)
         }
     }
 
@@ -90,13 +99,6 @@ class ListPlantFragment : Fragment() {
         })
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_plant, container, false)
-    }
 
     companion object {
         /**

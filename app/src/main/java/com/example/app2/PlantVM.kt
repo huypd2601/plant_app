@@ -4,11 +4,14 @@ package com.example.app2
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import android.view.View
 import androidx.core.content.ContextCompat.startActivity
+import androidx.core.os.bundleOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.findNavController
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.delay
@@ -121,10 +124,11 @@ class PlantVM : ViewModel() {
             _listOfPlant.value = dataSet
     }
 
-    fun handleItemWhenClicked(context: Context ,item: Plant) {
-        val intent = Intent(context, DetailActivity::class.java)
-        intent.putExtra("plant", item)
-        context.startActivity(intent)
+    fun handleItemWhenClicked(view: View, item: Plant) {
+
+        val action = ListPlantFragmentDirections.actionFragmentListPlantToPlantDetailFragment(item)
+        view.findNavController().navigate(action)
+
     }
 
 
