@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.navArgs
 import com.example.app2.databinding.ActivitySpeciesBinding
 import com.example.app2.databinding.FragmentSpeciesBinding
 import java.util.*
@@ -41,6 +42,15 @@ class SpeciesFragment : Fragment() {
     lateinit var dataList: List<Species>
     var mRecyclerView: IndexFastScrollRecyclerView? = null
 
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        binding = FragmentSpeciesBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -79,8 +89,8 @@ class SpeciesFragment : Fragment() {
     }
 
     private val OnSpeciesClickListener = object : OnSpeciesItemListener {
-        override fun onClickItem(item: Species) {
-            viewModel.handleItemWhenClicked(requireContext(), item)
+        override fun onClickItem(item: Species, view: View) {
+            viewModel.handleItemWhenClicked(view ,item)
         }
     }
 

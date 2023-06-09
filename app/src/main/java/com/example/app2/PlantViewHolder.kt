@@ -36,6 +36,6 @@ class PlantViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
         Glide.with(itemView.context).load(plant.image).centerCrop()
             .into(plantImage)
 
-        itemView.setOnClickListener { callback.onClickItem(plant) }
+        itemView.setOnClickListener { callback.onClickItem(plant, itemView) }
     }
 }

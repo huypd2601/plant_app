@@ -39,8 +39,8 @@
             android:name=".logInActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
 
+            android:name=".SpeciesActivity"
             android:exported="false" />
         <activity
             android:name=".introActivity"
@@ -52,8 +52,8 @@
             android:name=".forgotPasswordActivity"
             android:exported="false" />
         <activity
+            android:name=".MainActivity"
 
-            android:name=".SpeciesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -9,15 +9,55 @@
         android:id="@+id/homeFragment2"
         android:name="com.example.app2.homeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_speciesFragment"
+            app:destination="@id/speciesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addingFragment2"
         android:name="com.example.app2.addingFragment"
         android:label="fragment_adding"
         tools:layout="@layout/fragment_adding" />
+
     <fragment
         android:id="@+id/profileFragment2"
         android:name="com.example.app2.profileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/speciesFragment"
+        android:name="com.example.app2.SpeciesFragment"
+        android:label="SpeciesFragment"
+        tools:layout="@layout/fragment_species" >
+        <action
+            android:id="@+id/action_speciesFragment_to_fragmentListPlant"
+            app:destination="@id/fragmentListPlant" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentListPlant"
+        android:name="com.example.app2.ListPlantFragment"
+        android:label="fragment_list_plant"
+        tools:layout="@layout/fragment_list_plant" >
+        <argument
+            android:name="species"
+            app:argType="com.example.app2.Species" />
+        <action
+            android:id="@+id/action_fragmentListPlant_to_plantDetailFragment"
+            app:destination="@id/plantDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/plantDetailFragment"
+        android:name="com.example.app2.DetailPlantFragment"
+        android:label="fragment_detail_plant"
+        tools:layout="@layout/fragment_detail_plant" >
+        <argument
+            android:name="plant"
+            app:argType="com.example.app2.Plant" />
+    </fragment>
+
+
 </navigation>
