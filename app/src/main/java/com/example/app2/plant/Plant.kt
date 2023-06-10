@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.plant
 
 import android.os.Parcel
 import android.os.Parcelable

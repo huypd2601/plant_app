@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment2_to_speciesFragment"
             app:destination="@id/speciesFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_articlesFragment"
+            app:destination="@id/articlesFragment" />
     </fragment>
     <fragment
         android:id="@+id/addingFragment2"
@@ -28,35 +31,71 @@
 
     <fragment
         android:id="@+id/speciesFragment"
-        android:name="com.example.app2.SpeciesFragment"
+        android:name="com.example.app2.species.SpeciesFragment"
         android:label="SpeciesFragment"
         tools:layout="@layout/fragment_species" >
         <action
             android:id="@+id/action_speciesFragment_to_fragmentListPlant"
             app:destination="@id/fragmentListPlant" />
+        <action
+            android:id="@+id/action_speciesFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
     </fragment>
 
     <fragment
         android:id="@+id/fragmentListPlant"
-        android:name="com.example.app2.ListPlantFragment"
+        android:name="com.example.app2.plant.ListPlantFragment"
         android:label="fragment_list_plant"
         tools:layout="@layout/fragment_list_plant" >
         <argument
             android:name="species"
-            app:argType="com.example.app2.Species" />
+            app:argType="com.example.app2.species.Species" />
         <action
             android:id="@+id/action_fragmentListPlant_to_plantDetailFragment"
             app:destination="@id/plantDetailFragment" />
+        <action
+            android:id="@+id/action_fragmentListPlant_to_speciesFragment"
+            app:destination="@id/speciesFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/plantDetailFragment"
-        android:name="com.example.app2.DetailPlantFragment"
+        android:name="com.example.app2.plant.DetailPlantFragment"
         android:label="fragment_detail_plant"
         tools:layout="@layout/fragment_detail_plant" >
         <argument
             android:name="plant"
-            app:argType="com.example.app2.Plant" />
+            app:argType="com.example.app2.plant.Plant" />
+        <action
+            android:id="@+id/action_plantDetailFragment_to_fragmentListPlant"
+            app:destination="@id/fragmentListPlant" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/articlesFragment"
+        android:name="com.example.app2.articles.ArticlesFragment"
+        android:label="ArticlesFragment"
+        tools:layout="@layout/fragment_articles" >
+        <action
+            android:id="@+id/action_articlesFragment_to_detailArticlesFragment"
+            app:destination="@id/detailArticlesFragment" />
+        <action
+            android:id="@+id/action_articlesFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailArticlesFragment"
+        android:name="com.example.app2.articles.DetailArticlesFragment"
+        android:label="DetailArticlesFragment"
+        tools:layout="@layout/fragment_detail_articles" >
+        <action
+            android:id="@+id/action_detailArticlesFragment_to_articlesFragment"
+            app:destination="@id/articlesFragment" />
+        <argument
+            android:name="articles"
+            app:argType="com.example.app2.articles.Articles" />
     </fragment>
 
 

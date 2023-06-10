@@ -1,17 +1,14 @@
-package com.example.app2
+package com.example.app2.plant
 
 
-import android.content.Context
-import android.content.Intent
 import android.util.Log
 import android.view.View
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.os.bundleOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.findNavController
+import com.example.app2.species.Species
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.delay

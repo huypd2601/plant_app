@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ArticlesFragment">
+    tools:context=".articles.ArticlesFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ListPlant">
+        tools:context=".SpeciesActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutHeader"
@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textSpecies"
+                android:id="@+id/textArticles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -35,20 +35,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/backSpecies"
+            <Button
+                android:id="@+id/backButton"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="8dp"
-                android:contentDescription="back_Species"
-                android:src="@drawable/round_arrow_back_ios_24"
-                app:layout_constraintBottom_toTopOf="@+id/textSpecies"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:tint="@color/white" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_arrow_back_ios_new_24"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -71,18 +67,51 @@
                 app:searchHintIcon="@null"
                 app:searchIcon="@drawable/round_search_24" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/plant_list_recycle_view"
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/species_list_recycle_view"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_marginTop="12dp"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/search" />-->
+
+            <in.myinnos.alphabetsindexfastscrollrecycler.IndexFastScrollRecyclerView
+                android:id="@+id/articles_list_recycle_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/search" />
+                app:layout_constraintTop_toBottomOf="@id/search"
+                tools:ignore="MissingClass" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+        <!--    <SearchView-->
+        <!--        android:id="@+id/searchView"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginHorizontal="16dp"-->
+        <!--        android:queryHint="Search For Species "-->
+        <!--        android:iconifiedByDefault="false"-->
+        <!--        android:layout_marginTop="30dp"-->
+        <!--        android:layout_marginBottom="16dp"-->
+        <!--        android:background="@drawable/searchview_background"-->
+        <!--        />-->
+        <!--    <ListView-->
+        <!--        android:id="@+id/speciesList"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="match_parent"-->
+        <!--        android:layout_marginStart="16dp"-->
+        <!--        android:layout_marginEnd="16dp"-->
+
+        <!--        />-->
+
+        <!--    tools:listitem="@layout/list_item"-->
     </LinearLayout>
 
 </FrameLayout>

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailArticlesFragment">
+    tools:context=".articles.DetailArticlesFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <FrameLayout
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <ImageView
-                    android:id="@+id/plant_image"
+                    android:id="@+id/article_image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
@@ -104,7 +104,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/plant_title"
+                    android:id="@+id/article_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -123,8 +123,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Widget.AppCompat.RatingBar.Small"
-                    app:layout_constraintStart_toStartOf="@+id/plant_title"
-                    app:layout_constraintTop_toBottomOf="@+id/plant_title" />
+                    app:layout_constraintStart_toStartOf="@+id/article_title"
+                    app:layout_constraintTop_toBottomOf="@+id/article_title" />
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -134,7 +134,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/rating_bar">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/plant_ava"
+                        android:id="@+id/author_ava"
                         android:layout_width="52dp"
                         android:layout_height="51dp"
                         android:layout_centerHorizontal="true"
@@ -153,10 +153,10 @@
                         android:layout_width="154dp"
                         android:layout_height="44dp"
                         android:orientation="vertical"
-                        app:layout_constraintStart_toEndOf="@+id/plant_ava">
+                        app:layout_constraintStart_toEndOf="@+id/author_ava">
 
                         <TextView
-                            android:id="@+id/plant_name_user"
+                            android:id="@+id/author_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -169,7 +169,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/plant_desc"
+                            android:id="@+id/author_desc"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="2019 . 01 . 01"
@@ -204,7 +204,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/information_plaint"
+                    android:id="@+id/article_information"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
