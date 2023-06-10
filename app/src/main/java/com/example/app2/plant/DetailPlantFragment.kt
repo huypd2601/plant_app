@@ -1,17 +1,17 @@
-package com.example.app2
+package com.example.app2.plant
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.example.app2.databinding.FragmentListPlantBinding
+import com.example.app2.R
 
 class DetailPlantFragment : Fragment() {
 
@@ -42,11 +42,18 @@ class DetailPlantFragment : Fragment() {
         val plantKingdom: TextView? = view.findViewById(R.id.plant_kingdom)
         val plantFamily: TextView? = view.findViewById(R.id.plant_family)
 
+
         plantName?.text = plant?.name
         plantDesc?.text = plant?.desc
         Glide.with(this).load(plant?.image).into(plantImage)
         plantFamily?.text = plant?.family
         plantKingdom?.text = plant?.kingdom
+
+        val bnt : Button? = view.findViewById(R.id.backButton)
+        bnt?.setOnClickListener {
+            val controller = findNavController()
+            controller.navigate(R.id.action_plantDetailFragment_to_fragmentListPlant)
+        }
 
 
     }

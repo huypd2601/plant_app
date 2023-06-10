@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.login
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.example.app2.R
 import com.example.app2.databinding.ActivityIntroductionPage1Binding
 
 
@@ -27,7 +28,7 @@ class IntroductionPage1 : AppCompatActivity() {
             preferences.edit().putBoolean(introKey,false).apply()
             val intent = Intent(this, IntroductionPage2::class.java)
             startActivity(intent)
-            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
     }
 }

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SpeciesFragment">
+    tools:context=".species.SpeciesFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -35,20 +35,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/backSpecies"
+            <Button
+                android:id="@+id/backButton"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="8dp"
-                android:contentDescription="back_Species"
-                android:src="@drawable/round_arrow_back_ios_24"
-                app:layout_constraintBottom_toTopOf="@+id/textSpecies"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:tint="@color/white" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_arrow_back_ios_new_24"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

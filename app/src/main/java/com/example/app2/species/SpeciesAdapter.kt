@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.species
 
 import android.view.View
 import android.view.ViewGroup
@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import java.util.*
 interface OnSpeciesItemListener {
-    fun onClickItem(item: Species , view : View)
+    fun onClickItem(item: Species, view : View)
 }
 
 
 class SpeciesAdapter(private val itemListener: OnSpeciesItemListener) :
-    ListAdapter<Species,SpeciesViewHolder>
+    ListAdapter<Species, SpeciesViewHolder>
         (ImageDiffUtil()) , SectionIndexer{
 
     private val mSections = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#"

@@ -1,9 +1,10 @@
-package com.example.app2
+package com.example.app2.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.example.app2.R
 import com.example.app2.databinding.ActivityIntroductionPage3Binding
 
 class IntroductionPage3 : AppCompatActivity() {

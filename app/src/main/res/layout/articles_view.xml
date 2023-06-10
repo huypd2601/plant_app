@@ -19,7 +19,7 @@
             tools:ignore="MissingConstraints">
 
             <ImageView
-                android:id="@+id/plant_image"
+                android:id="@+id/articles_image"
                 android:layout_width="match_parent"
                 android:layout_height="195dp"
                 android:layout_marginStart="20dp"
@@ -33,7 +33,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/plant_title"
+                        android:id="@+id/article_title"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -47,7 +47,7 @@
                         android:layout_height="wrap_content">
 
                         <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/plant_ava"
+                            android:id="@+id/author_ava"
                             android:layout_width="52dp"
                             android:layout_height="51dp"
                             android:layout_centerHorizontal="true"
@@ -65,10 +65,10 @@
                             android:layout_width="228dp"
                             android:layout_height="41dp"
                             android:orientation="vertical"
-                            app:layout_constraintStart_toEndOf="@+id/plant_ava">
+                            app:layout_constraintStart_toEndOf="@+id/author_ava">
 
                             <TextView
-                                android:id="@+id/plant_name_user"
+                                android:id="@+id/author_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
@@ -80,7 +80,7 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/plant_desc"
+                                android:id="@+id/author_desc"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:text="2019 . 01 . 01"

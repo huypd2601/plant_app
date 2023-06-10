@@ -1,10 +1,11 @@
-package com.example.app2
+package com.example.app2.species
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app2.R
 
 class SpeciesViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
     companion object {

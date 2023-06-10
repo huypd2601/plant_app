@@ -1,20 +1,18 @@
-package com.example.app2
+package com.example.app2.plant
 
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 
 
 interface OnPlantItemListener {
-    fun onClickItem(item: Plant,view: View)
+    fun onClickItem(item: Plant, view: View)
 }
 
 
 class PlantAdapter (private val itemListener : OnPlantItemListener) :
-    ListAdapter<Plant , PlantViewHolder>
+    ListAdapter<Plant, PlantViewHolder>
         (ImageDiffUtil()) {
 
     override fun onCreateViewHolder(

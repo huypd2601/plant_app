@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.plant
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app2.R
 
 class PlantViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
     companion object {

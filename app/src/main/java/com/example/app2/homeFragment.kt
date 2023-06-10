@@ -44,6 +44,10 @@ class homeFragment : Fragment() {
             controller.navigate(R.id.action_homeFragment2_to_speciesFragment)
         }
 
+        binding.articles.setOnClickListener {
+            val controller = findNavController()
+            controller.navigate(R.id.action_homeFragment2_to_articlesFragment)
+        }
     }
 
 }

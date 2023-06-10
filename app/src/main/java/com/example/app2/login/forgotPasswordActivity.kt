@@ -1,10 +1,10 @@
-package com.example.app2
+package com.example.app2.login
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.example.app2.R
 import com.example.app2.databinding.ActivityForgotPasswordBinding
 import com.google.firebase.auth.FirebaseAuth
 

@@ -15,13 +15,13 @@
             android:name=".ListPlant"
             android:exported="false" />
         <activity
-            android:name=".IntroductionPage3"
+            android:name=".login.IntroductionPage3"
             android:exported="false" />
         <activity
-            android:name=".IntroductionPage2"
+            android:name=".login.IntroductionPage2"
             android:exported="false" />
         <activity
-            android:name=".IntroductionPage1"
+            android:name=".login.IntroductionPage1"
             android:exported="false" />
         <activity
             android:name=".DetailArticlesActivity"
@@ -33,23 +33,23 @@
             android:name=".DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".PlantVM"
+            android:name=".plant.PlantVM"
             android:exported="false" />
         <activity
-            android:name=".logInActivity"
+            android:name=".login.logInActivity"
             android:exported="false" />
         <activity
 
             android:name=".SpeciesActivity"
             android:exported="false" />
         <activity
-            android:name=".introActivity"
+            android:name=".login.introActivity"
             android:exported="false" />
         <activity
-            android:name=".signUpActivity"
+            android:name=".login.signUpActivity"
             android:exported="false" />
         <activity
-            android:name=".forgotPasswordActivity"
+            android:name=".login.forgotPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
