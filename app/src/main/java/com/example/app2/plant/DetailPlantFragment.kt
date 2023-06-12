@@ -52,7 +52,7 @@ class DetailPlantFragment : Fragment() {
         val bnt : Button? = view.findViewById(R.id.backButton)
         bnt?.setOnClickListener {
             val controller = findNavController()
-            controller.navigate(R.id.action_plantDetailFragment_to_fragmentListPlant)
+            controller.navigate(R.id.action_plantDetailFragment_to_homeFragment2)
         }
 
 
