@@ -67,8 +67,10 @@
             android:name="plant"
             app:argType="com.example.app2.plant.Plant" />
         <action
-            android:id="@+id/action_plantDetailFragment_to_fragmentListPlant"
-            app:destination="@id/fragmentListPlant" />
+            android:id="@+id/action_plantDetailFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2"
+            app:popUpTo="@id/homeFragment2"
+            app:popUpToInclusive="true" />
     </fragment>
 
 
