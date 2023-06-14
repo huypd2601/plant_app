@@ -72,21 +72,21 @@
                         android:layout_below="@+id/iv_avatarProfile"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="John Cena"
+
                         android:textColor="@color/white"
                         android:textSize="22sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tv_locationUser"
+                        android:id="@+id/tv_emailUser"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_nameUser"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:drawableLeft="@drawable/baseline_location_24"
+                        android:drawableLeft="@drawable/baseline_email_24"
                         android:drawableTint="@color/white"
-                        android:text="District 1, Ho Chi Minh City"
+
                         android:textColor="@color/white"
                         android:textSize="18sp" />
 
