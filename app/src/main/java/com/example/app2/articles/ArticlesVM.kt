@@ -8,7 +8,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.findNavController
-import com.example.app2.plant.Plant
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.delay
@@ -21,6 +20,7 @@ private const val TAG1 = "AriticlesVM1"
 class ArticlesVM : ViewModel() {
     private val dataSet : ArrayList<Articles> = arrayListOf()
     private var _listOfArticles: MutableLiveData<List<Articles>> = MutableLiveData()
+
     val listOfArticles: LiveData<List<Articles>>
         get() = _listOfArticles
 
