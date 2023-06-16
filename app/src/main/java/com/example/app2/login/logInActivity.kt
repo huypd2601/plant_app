@@ -1,5 +1,6 @@
 package com.example.app2.login
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -36,6 +37,13 @@ class logInActivity : AppCompatActivity() {
                     if (it.isSuccessful) {
                         val user = firebaseAuth.currentUser
                         if (user?.isEmailVerified == true) {
+                            val userId1 = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+                            val editor = userId1.edit()
+                            editor.apply{
+                                putString("USERID",firebaseAuth.uid.toString())
+                            }.apply()
+                            println(firebaseAuth.uid.toString())
+
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
                             Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show()
