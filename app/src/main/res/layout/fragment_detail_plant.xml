@@ -85,6 +85,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ToggleButton
+                android:id="@+id/like_button"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="60dp"
