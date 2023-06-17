@@ -11,57 +11,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="180dp">
-
-            <ImageView
-                android:id="@+id/iv_backgroundPlantView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:src="@drawable/rectangle_plant_view"
-                tools:ignore="MissingConstraints" />
-
-            <ImageView
-                android:id="@+id/iv_iconBack_plantView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="30dp"
-                android:src="@drawable/baseline_arrow_back_24"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="30dp"
-                android:layout_marginBottom="50dp"
-                android:text="Cactus"
-                android:textColor="@color/white"
-                android:textSize="35dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_backgroundPlantView"
-                tools:ignore="MissingConstraints" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_plantView"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="-30dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:background="@drawable/searchview_background"
-            app:iconifiedByDefault="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:queryHint="Search For Cactus"
-            app:queryBackground="@android:color/transparent"
-            app:searchHintIcon="@null"
-            app:searchIcon="@drawable/round_search_24"
-            tools:layout_editor_absoluteX="12dp" />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

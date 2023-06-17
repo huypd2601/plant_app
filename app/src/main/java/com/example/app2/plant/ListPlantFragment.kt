@@ -69,6 +69,7 @@ class ListPlantFragment : Fragment() {
         })
         setUpRecyclerView()
         registerDataEvent()
+        registerLoadingView()
         binding.backButton.setOnClickListener {
             val controller = findNavController()
             controller.navigate(R.id.action_fragmentListPlant_to_speciesFragment)
@@ -121,6 +122,15 @@ class ListPlantFragment : Fragment() {
                 adapter.submitList(data)
             }
         })
+    }
+    private fun registerLoadingView() {
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            run {
+                binding.progressBar.visibility =
+                    if (isLoading) View.VISIBLE else
+                        View.INVISIBLE
+            }
+        }
     }
 
 }

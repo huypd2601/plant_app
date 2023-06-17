@@ -48,6 +48,10 @@ class homeFragment : Fragment() {
             val controller = findNavController()
             controller.navigate(R.id.action_homeFragment2_to_articlesFragment)
         }
+        binding.addingNew.setOnClickListener{
+            val controller = findNavController()
+            controller.navigate(R.id.action_homeFragment2_to_addingFragment2)
+        }
     }
 
 }

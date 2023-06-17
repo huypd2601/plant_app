@@ -66,7 +66,6 @@ class ArticlesFragment : Fragment() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 val searchText = newText!!.toLowerCase(Locale.getDefault())
                 viewModel.filter(searchText)
-                registerDataEvent()
                 return false
             }
         })
@@ -74,6 +73,7 @@ class ArticlesFragment : Fragment() {
         setUpRecyclerView()
         initialiseUI()
         registerDataEvent()
+        registerLoadingView()
         binding.backButton.setOnClickListener {
             val controller = findNavController()
             controller.navigate(R.id.action_articlesFragment_to_homeFragment2)
@@ -120,6 +120,7 @@ class ArticlesFragment : Fragment() {
     private fun registerDataEvent() {
         viewModel.listOfArticles.observe(viewLifecycleOwner, Observer { data ->
             run {
+                Log.d("profileFragment", "submit List")
                 adapter.submitList(data)
             }
         })
@@ -141,6 +142,15 @@ class ArticlesFragment : Fragment() {
         }
         Objects.requireNonNull<RecyclerView.LayoutManager>(mRecyclerView?.layoutManager)
             .scrollToPosition(0)
+    }
+    private fun registerLoadingView() {
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            run {
+                binding.progressBar.visibility =
+                    if (isLoading) View.VISIBLE else
+                        View.INVISIBLE
+            }
+        }
     }
 
 }
