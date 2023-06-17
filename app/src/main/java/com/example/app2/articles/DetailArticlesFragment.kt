@@ -65,10 +65,8 @@ class DetailArticlesFragment : Fragment() {
 
         val bnt : Button? = view?.findViewById(R.id.backButton)
         bnt?.setOnClickListener {
-//            getFragmentManager()?.popBackStack()
             val controller = findNavController()
-//            controller.navigate(R.id.action_detailArticlesFragment_to_articlesFragment)
-            findNavController().popBackStack()
+            controller.navigate(R.id.action_detailArticlesFragment_to_articlesFragment)
         }
 
 
