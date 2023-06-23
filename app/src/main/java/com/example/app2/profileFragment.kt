@@ -74,17 +74,14 @@ class profileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
-        val userName = view.findViewById(R.id.tv_nameUser) as TextView
-        val email = view.findViewById(R.id.tv_emailUser) as TextView
-        firestore.collection("profile").document("profile")
-            .collection("profile").document(firebaseAuth.uid.toString())
-            .get().addOnSuccessListener {
-                val data : MutableMap<String,Any> = it.data!!
-                userName.text = data["UserName"].toString()
-                email.text = data["Email"].toString()
-            }
-        imageView = view.findViewById(R.id.iv_avatarProfile)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
+        val userName = binding.tvNameUser
+        val email = binding.tvEmailUser
+        val preferences = this.requireActivity()!!
+            .getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        userName.text = preferences.getString("UserName",null).toString()
+        email.text = preferences.getString("Email",null).toString()
+        imageView = binding.ivAvatarProfile
         val ref = storageReference.child(firebaseAuth.uid.toString())
         ref.getBytes(10 * 1024 * 1024).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
@@ -93,7 +90,6 @@ class profileFragment : Fragment() {
         imageView.setOnClickListener {
             launchGallery()
         }
-        binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 

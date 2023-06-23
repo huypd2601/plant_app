@@ -19,28 +19,37 @@ class logInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         firebaseAuth = FirebaseAuth.getInstance()
-        val user = firebaseAuth.currentUser
-        if (user != null) {
-            if (user.isEmailVerified) {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+
+        val prefs = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val editor = prefs.getBoolean("RememberLogin", true)
+        if (!editor) {
+            val user = firebaseAuth.currentUser
+            if (user != null) {
+                if (user.isEmailVerified) {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                }
             }
         }
         binding = DataBindingUtil.setContentView(this, R.layout.activity_log_in)
         binding.loginButton.setOnClickListener {
             val email = binding.email.text.trim().toString()
             val pass = binding.password.text?.trim().toString()
-
             if (email.isNotEmpty() && pass.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
+                        val check = binding.rememberMe.isChecked
                         val user = firebaseAuth.currentUser
                         if (user?.isEmailVerified == true) {
-                            val userId1 = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
-                            val editor = userId1.edit()
+                            val prefs = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+                            val editor = prefs.edit()
                             editor.apply{
                                 putString("USERID",firebaseAuth.uid.toString())
+                                if (check){
+                                    putBoolean("RememberLogin",false)
+                                }
                             }.apply()
                             println(firebaseAuth.uid.toString())
 

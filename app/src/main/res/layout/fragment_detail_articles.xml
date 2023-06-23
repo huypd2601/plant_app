@@ -8,10 +8,10 @@
 
     <!-- TODO: Update blank fragment layout -->
     <FrameLayout
+        android:id="@+id/frame_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:id="@+id/frame_layout"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,9 +22,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             tools:ignore="MissingConstraints">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <ImageView
                     android:id="@+id/article_image"
                     android:layout_width="match_parent"
@@ -57,21 +59,20 @@
                     android:id="@+id/linearLayout2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/type_plant1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginStart="20dp"
-                        android:text="VEGETABLES"
-                        android:padding="8dp"
+                        android:layout_marginTop="10dp"
                         android:background="#1A2F91EB"
-                        android:textStyle="bold"
+                        android:padding="8dp"
+                        android:text="VEGETABLES"
                         android:textColor="#2F91EB"
                         android:textSize="14sp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -79,13 +80,13 @@
                         android:id="@+id/type_plant2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginStart="50dp"
-                        android:textStyle="bold"
-                        android:text="GARDEN"
-                        android:padding="8dp"
-                        android:textColor="#2F91EB"
+                        android:layout_marginTop="10dp"
                         android:background="#1A2F91EB"
+                        android:padding="8dp"
+                        android:text="GARDEN"
+                        android:textColor="#2F91EB"
+                        android:textStyle="bold"
 
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -121,9 +122,9 @@
 
                 <RatingBar
                     android:id="@+id/rating_bar"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/Widget.AppCompat.RatingBar.Small"
                     app:layout_constraintStart_toStartOf="@+id/article_title"
                     app:layout_constraintTop_toBottomOf="@+id/article_title" />
 
@@ -163,8 +164,8 @@
                             android:layout_marginTop="10dp"
                             android:text="Shivani Vora"
                             android:textColor="#505050"
-                            android:textStyle="bold"
                             android:textSize="14sp"
+                            android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@id/plant_ava"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -188,7 +189,6 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="32dp"
                         android:background="@drawable/toggle_follow"
-                        android:onClick="onFollowToggleClick"
                         android:textOff=""
                         android:textOn=""
                         app:layout_constraintEnd_toEndOf="parent"
@@ -208,33 +208,17 @@
                     android:id="@+id/article_information"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+
                     android:text="Public parks aside, getting a dose of nature can be a tricky task during an urban escape. But nat ure should and can fit into that city getaway, acc ording to Kally Ellis, the founder of the London fl orist company McQueens and the in-house florist for the Maybourne Hotel Group. “Connecting with the natural world wherever you are is a great antid ote to jet lag and travel tiredness,” she said. “Plan ts and flowers can refresh us, boost our energy and help us recalibrate.”"
                     android:textColor="#6A6F7D"
-
                     android:textSize="18sp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </ScrollView>
 
         </LinearLayout>
     </FrameLayout>
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:itemIconTint="@drawable/bottom_nav_colors"
-        app:itemTextColor="@drawable/bottom_nav_colors"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
