@@ -21,7 +21,9 @@
     <ImageView
         android:id="@+id/plant_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/xuongrong"
@@ -68,19 +70,19 @@
 
             <TextView
                 android:id="@+id/type_plant2"
-                android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:text="DECORATION"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:textColor="#2F91EB"
                 android:background="#1A2F91EB"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingTop="4dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="4dp"
+                android:text="DECORATION"
+                android:textColor="#2F91EB"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,7 +99,6 @@
 
 
         </LinearLayout>
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

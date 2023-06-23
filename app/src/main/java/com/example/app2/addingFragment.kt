@@ -1,21 +1,22 @@
 package com.example.app2
 
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
-
 import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.app2.databinding.FragmentAddingBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -37,6 +38,7 @@ class addingFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private val cameraRequest = 1888
+    private lateinit var binding: FragmentAddingBinding
     private lateinit var imageView: ImageView
     private lateinit var button: Button
     private lateinit var firebaseStorage: FirebaseStorage
@@ -61,39 +63,45 @@ class addingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_adding, container, false)
-        imageView = view.findViewById(R.id.imageView)
-        button = view.findViewById<Button>(R.id.buttonUp)
-        val name = view.findViewById<EditText>(R.id.plant_name)
-        val family = view.findViewById<EditText>(R.id.plant_family)
-        val kingdom = view.findViewById<EditText>(R.id.plant_kingdom)
-        val decs = view.findViewById<EditText>(R.id.plant_desc)
+        binding = FragmentAddingBinding.inflate(inflater, container, false)
+        imageView = binding.imageView
+        button = binding.buttonUp
+        val name = binding.plantName
+        val family = binding.plantFamily
+        val kingdom = binding.plantKingdom
+        val decs = binding.plantDesc
         button.setOnClickListener {
             val data : MutableMap<String,Any> = HashMap()
+            val updata = firestore.collection("species").document(family.text!!.trim().toString())
+            data["family"] = family.text!!.trim().toString()
+            updata.set(data)
+            val ref = storageReference.child("${name.text!!.trim().toString()}.jpg")
+            data["image"] = "https://firebasestorage.googleapis.com/v0/b/plantapp-278a7.appspot.com/o/${name.text!!.trim().toString()}.jpg?alt=media"
             data["desc"] = decs.text.trim().toString()
-            data["family"] = family.text.trim().toString()
-            data["kingdom"] = kingdom.text.trim().toString()
-            data["name"] = name.text.trim().toString()
-            val ref = storageReference.child("${name.text.trim().toString()}.jpg")
-            ref.putBytes(bb)
-            firestore.collection("species").document(family.text.trim().toString())
-                .collection(family.text.trim().toString()).document(name.text.trim().toString())
+            data["kingdom"] = kingdom.text!!.trim().toString()
+            data["name"] = name.text!!.trim().toString()
+            updata.collection(family.text!!.trim().toString()).document(name.text!!.trim().toString())
                 .set(data).addOnCompleteListener {
-                    Toast.makeText(view.context,"Thêm dữ liệu thành công!",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this.context,"Thêm dữ liệu thành công!",Toast.LENGTH_SHORT).show()
                 }
         }
-        return view
+        return binding.root
     }
     @RequiresApi(Build.VERSION_CODES.O)
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == cameraRequest) {
-            val photo: Bitmap = data?.extras?.get("data") as Bitmap
-            val bytes: ByteArrayOutputStream = ByteArrayOutputStream()
-            photo.compress(Bitmap.CompressFormat.JPEG,100,bytes)
-            bb = bytes.toByteArray()
-            imageView.setImageBitmap(photo)
+            if (resultCode == Activity.RESULT_OK){
+                val photo: Bitmap = data?.extras?.get("data") as Bitmap
+                val bytes: ByteArrayOutputStream = ByteArrayOutputStream()
+                photo.compress(Bitmap.CompressFormat.JPEG,100,bytes)
+                bb = bytes.toByteArray()
+                imageView.setImageBitmap(photo)
+            } else {
+                val controller = findNavController()
+                controller.navigate(R.id.homeFragment2)
+            }
         }
     }
 
