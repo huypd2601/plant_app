@@ -92,7 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Forgot Password?"
-                    android:paddingStart="124dp"
+                    android:paddingStart="95dp"
                     android:textColor="#6A6F7D"
                     android:textStyle="bold"/>
             </LinearLayout>
