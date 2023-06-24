@@ -21,7 +21,13 @@
         android:id="@+id/addingFragment2"
         android:name="com.example.app2.addingFragment"
         android:label="fragment_adding"
-        tools:layout="@layout/fragment_adding" />
+        tools:layout="@layout/fragment_adding" >
+        <action
+            android:id="@+id/action_addingFragment2_to_homeFragment2"
+            app:destination="@id/homeFragment2"
+            app:popUpTo="@id/homeFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/profileFragment2"
@@ -71,9 +77,9 @@
             android:name="plant"
             app:argType="com.example.app2.plant.Plant" />
         <action
-            android:id="@+id/action_plantDetailFragment_to_speciesFragment"
-            app:destination="@id/speciesFragment"
-            app:popUpTo="@id/speciesFragment"
+            android:id="@+id/action_plantDetailFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2"
+            app:popUpTo="@id/homeFragment2"
             app:popUpToInclusive="true" />
     </fragment>
 

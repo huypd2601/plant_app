@@ -83,6 +83,8 @@ class addingFragment : Fragment() {
             updata.collection(family.text!!.trim().toString()).document(name.text!!.trim().toString())
                 .set(data).addOnCompleteListener {
                     Toast.makeText(this.context,"Thêm dữ liệu thành công!",Toast.LENGTH_SHORT).show()
+                    val controller = findNavController()
+                    controller.navigate(R.id.action_addingFragment2_to_homeFragment2)
                 }
         }
         return binding.root
