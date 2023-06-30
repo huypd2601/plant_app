@@ -76,6 +76,7 @@ class addingFragment : Fragment() {
             data["family"] = family.text!!.trim().toString()
             updata.set(data)
             val ref = storageReference.child("${name.text!!.trim().toString()}.jpg")
+            ref.putBytes(bb)
             data["image"] = "https://firebasestorage.googleapis.com/v0/b/plantapp-278a7.appspot.com/o/${name.text!!.trim().toString()}.jpg?alt=media"
             data["desc"] = decs.text.trim().toString()
             data["kingdom"] = kingdom.text!!.trim().toString()
