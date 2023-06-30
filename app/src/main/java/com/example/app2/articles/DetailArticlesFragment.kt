@@ -113,9 +113,6 @@ class DetailArticlesFragment : Fragment() {
 
         }
 
-
-
-
     }
 
 

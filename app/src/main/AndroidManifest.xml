@@ -18,13 +18,18 @@
             android:name=".login.IntroductionPage2"
             android:exported="false" />
         <activity
+            android:name=".login.logInActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".plant.PlantVM"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+
             android:exported="false" />
         <activity
-            android:name=".login.logInActivity"
+            android:name=".login.introActivity"
             android:exported="false" />
         <activity
             android:name=".login.signUpActivity"
@@ -33,11 +38,12 @@
             android:name=".login.forgotPasswordActivity"
             android:exported="false" />
         <activity
-
             android:name=".login.IntroductionPage1"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

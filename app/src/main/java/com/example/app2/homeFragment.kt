@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.widget.SearchView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.app2.databinding.FragmentHomeBinding
@@ -26,6 +27,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class homeFragment : Fragment() {
     lateinit var binding : FragmentHomeBinding
+    lateinit var searchView: SearchView
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,6 +62,9 @@ class homeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        searchView = binding.search
+        searchView.clearFocus()
+
         binding.species.setOnClickListener {
             val controller = findNavController()
             controller.navigate(R.id.action_homeFragment2_to_speciesFragment)

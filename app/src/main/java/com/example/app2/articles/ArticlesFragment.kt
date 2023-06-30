@@ -80,6 +80,18 @@ class ArticlesFragment : Fragment() {
         }
     }
 
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        Log.d(TAG, "debug2")
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+
+    }
+
+
     private fun setUpRecyclerView() {
         binding.articlesListRecycleView.layoutManager = LinearLayoutManager(requireContext())
         mRecyclerView = binding.articlesListRecycleView
@@ -152,5 +164,7 @@ class ArticlesFragment : Fragment() {
             }
         }
     }
+
+
 
 }

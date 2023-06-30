@@ -122,7 +122,7 @@ class profileFragment : Fragment() {
         userId = preferences.getString("USERID", null).toString()
         binding = FragmentProfileBinding.bind(view)
         viewModel = ViewModelProvider(this)[LikedItemVM::class.java]
-        setUpRecyclerView(true,userId!!)
+        setUpRecyclerView(false,userId!!)
         registerDataEvent()
         registerLoadingView()
         binding.plantsButton.setOnClickListener{

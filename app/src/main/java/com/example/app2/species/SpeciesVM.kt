@@ -87,8 +87,11 @@ class SpeciesVM : ViewModel() {
     }
 
     fun handleItemWhenClicked(view: View ,item: Species) {
-        val action = SpeciesFragmentDirections.actionSpeciesFragmentToFragmentListPlant(item)
-        view.findNavController().navigate(action)
+        if (item.name?.length!! > 1)
+        {
+            val action = SpeciesFragmentDirections.actionSpeciesFragmentToFragmentListPlant(item)
+            view.findNavController().navigate(action)
+        }
 
     }
 
