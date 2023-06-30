@@ -93,7 +93,6 @@
 
 
                     <ToggleButton
-                        android:id="@+id/like_button"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginStart="60dp"
@@ -189,6 +188,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="32dp"
                         android:background="@drawable/toggle_follow"
+                        android:onClick="onFollowToggleClick"
                         android:textOff=""
                         android:textOn=""
                         app:layout_constraintEnd_toEndOf="parent"
@@ -221,4 +221,6 @@
 
         </LinearLayout>
     </FrameLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

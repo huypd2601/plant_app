@@ -31,7 +31,12 @@ class PlantViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
         val plantFamily = itemView.findViewById<TextView>(R.id.plant_family)
 
         plantName.text = plant.name
-        plantDesc.text = plant.desc
+        if (plant.desc?.length!! > 40 )
+        {
+            plantDesc.text = plant.desc?.subSequence(0, 40).toString() + " ..."
+        }else{
+            plantDesc.text = plant.desc
+        }
         plantKingdom.text = plant.kingdom
         plantFamily.text  = plant.family
         Glide.with(itemView.context).load(plant.image).centerCrop()

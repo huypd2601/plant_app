@@ -50,6 +50,16 @@ class SpeciesVM : ViewModel() {
                     val species = Species(document.id)
                     dataSet.add(species)
                 }
+                for (i in 65..90)
+                {
+                    println(i.toChar())
+                    if (dataSet.any { it.name?.uppercase()?.first() == i.toChar() }){
+                        dataSet.add(Species(i.toChar().toString()))
+                    }
+                }
+                val x : List<Species> = dataSet.sortedBy { it.name?.lowercase() }
+                dataSet.clear()
+                dataSet.addAll(x)
             }
             .addOnFailureListener { exception ->
                 Log.d(TAG, "Error getting documents: ", exception)

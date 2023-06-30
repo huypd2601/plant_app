@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
@@ -32,6 +33,7 @@ import com.example.app2.liked_item.LikedItemAdapter
 import com.example.app2.liked_item.LikedItemVM
 import com.example.app2.liked_item.LikedItemViewModelFactory
 import com.example.app2.liked_item.OnLikedItemListener
+import com.example.app2.login.logInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -136,6 +138,24 @@ class profileFragment : Fragment() {
             setUpRecyclerView(opt!!, userId!!)
 
         }
+
+        binding.ivMoreInformation.setOnClickListener {
+            val popupMenu: PopupMenu = PopupMenu(requireContext(),binding.ivMoreInformation)
+            popupMenu.menuInflater.inflate(R.menu.sign_out,popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
+                if (item.itemId == R.id.about ) {
+
+                }
+                if (item.itemId == R.id.signout ) {
+                    val intent = Intent(requireContext(), logInActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                }
+                true
+            })
+            popupMenu.show()
+        }
+
     }
 
     private fun setUpRecyclerView(opt : Boolean, userId : String) {
