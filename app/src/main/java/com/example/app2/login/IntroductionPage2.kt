@@ -16,6 +16,7 @@ class IntroductionPage2 : AppCompatActivity() {
             val intent = Intent(this, IntroductionPage3::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+            finish()
         }
     }
 }

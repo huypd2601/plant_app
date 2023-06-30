@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">app2</string>
+    <string name="app_name">Plant</string>
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="listview">A list view is an adapter view that does not know the details, such as type and contents, of the views it contains.

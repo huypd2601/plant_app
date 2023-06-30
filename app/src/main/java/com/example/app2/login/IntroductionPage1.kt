@@ -8,8 +8,6 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.example.app2.R
 import com.example.app2.databinding.ActivityIntroductionPage1Binding
-
-
 class IntroductionPage1 : AppCompatActivity() {
     private lateinit var binding: ActivityIntroductionPage1Binding
     lateinit var preferences: SharedPreferences
@@ -29,6 +27,7 @@ class IntroductionPage1 : AppCompatActivity() {
             val intent = Intent(this, IntroductionPage2::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+            finish()
         }
     }
 }
