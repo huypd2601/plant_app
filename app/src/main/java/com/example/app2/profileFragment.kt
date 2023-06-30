@@ -5,6 +5,8 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -120,23 +122,24 @@ class profileFragment : Fragment() {
         userId = preferences.getString("USERID", null).toString()
         binding = FragmentProfileBinding.bind(view)
         viewModel = ViewModelProvider(this)[LikedItemVM::class.java]
-
         setUpRecyclerView(true,userId!!)
         registerDataEvent()
         registerLoadingView()
         binding.plantsButton.setOnClickListener{
+            binding.plantsButton.setBackgroundResource(R.drawable.profile_btn)
+            binding.articlesButton.setBackgroundResource(R.drawable.profile_btn_none)
             Log.d("profileFragment", "plantButton ")
             opt = false
             Log.d("profileFragment", opt.toString())
             setUpRecyclerView(opt!!,userId!!)
-
         }
         binding.articlesButton.setOnClickListener{
+            binding.plantsButton.setBackgroundResource(R.drawable.profile_btn_none)
+            binding.articlesButton.setBackgroundResource(R.drawable.profile_btn)
             Log.d("profileFragment", "articlesButton ")
             opt = true
             Log.d("profileFragment", opt.toString())
             setUpRecyclerView(opt!!, userId!!)
-
         }
 
         binding.ivMoreInformation.setOnClickListener {
@@ -147,6 +150,12 @@ class profileFragment : Fragment() {
 
                 }
                 if (item.itemId == R.id.signout ) {
+                    val preferences = this.requireActivity()!!
+                        .getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+                    preferences.edit().apply(){
+                        putBoolean("RememberLogin",true)
+                    }.apply()
+                    firebaseAuth.signOut()
                     val intent = Intent(requireContext(), logInActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
